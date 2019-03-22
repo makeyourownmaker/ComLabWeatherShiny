@@ -1,24 +1,15 @@
-# import libraries
+
 library(shiny)
 library(data.table)
 
-# Import data
-#cammet <- readRDS("data/CamMetCleanishData2018.RData")
 cammet <- readRDS("data/CamMetCleanishData.RData")
-  
-# Clean data
 
 
-# initiating the UI
 ui <- shinyUI(fluidPage(
 
-  # Add a title
   titlePanel("Cambridge Weather"),
 
-  # This creates a layout with a left sidebar and main section
   sidebarLayout(
-    # sidebar section
-    #  usually includes inputs
     sidebarPanel(
       helpText("Explore ", tags$a(href="https://www.cl.cam.ac.uk/research/dtg/weather/", "ComLab"),  "weather measurements:"),
       selectInput("year", 
@@ -57,7 +48,6 @@ ui <- shinyUI(fluidPage(
                   selected = "dew.point")
     ),
 
-    # main section
     mainPanel(
       plotOutput("plot"),
       textOutput("selected_x")
@@ -66,15 +56,13 @@ ui <- shinyUI(fluidPage(
 )))
 
 
-# initiating the SERVER 
 server <- shinyServer(function(input, output) {
 
-  # ...
+  # debuging
   output$selected_x <- renderText({ 
     paste("You have selected", input$selectX)
   })
 
-  # define any reactive elements of the app
   data <- reactive({
       cammet[year==input$year, .(get(input$selectX), get(input$selectY))]
   })
@@ -92,5 +80,4 @@ server <- shinyServer(function(input, output) {
 })
 
 
-# launches the app
 shinyApp(ui = ui, server = server)
