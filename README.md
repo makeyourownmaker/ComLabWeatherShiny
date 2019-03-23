@@ -18,7 +18,6 @@ This R [shiny](https://shiny.rstudio.com/) app provides an interactive explorati
 ### Variables
 The weather measurements include the following variables.
   
-|-------------------|----------------------------|
 | Variables         | Units                      |
 |-------------------|----------------------------|
 | Temperature       | Celsius (°C)               |
@@ -28,7 +27,6 @@ The weather measurements include the following variables.
 | Wind Speed Mean   | Knots                      |
 | Wind Bearing Mean | Degrees                    |
 | Timestamp         | Data Hours:Minutes:Seconds |
-|-------------------|----------------------------|
 
 Dew point is the temperature at which air, at a level of constant pressure, can no longer hold all the water it contains. 
 
