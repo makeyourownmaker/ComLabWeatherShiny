@@ -28,25 +28,21 @@ The weather measurements include the following variables.
 | Wind Bearing Mean | Degrees                    |
 | Timestamp         | Data Hours:Minutes:Seconds |
 
-Dew point is the temperature at which air, at a level of constant pressure, can no longer hold all the water it contains. 
-
-Dew point is defined [here](https://www.cl.cam.ac.uk/research/dtg/weather/dewpoint.html) and in more detail [here](http://www.faqs.org/faqs/meteorology/temp-dewpoint/).
+Dew point is the temperature at which air, at a level of constant pressure, can no longer hold all the 
+water it contains.  Dew point is defined [here](https://www.cl.cam.ac.uk/research/dtg/weather/dewpoint.html) 
+and in more detail [here](http://www.faqs.org/faqs/meteorology/temp-dewpoint/).
 
 There are known issues with the sunlight and rain sensors.  These measurements are not included for now.
 
 
 ### Cleaning
 
-The data included in the app start on 2008-08-01 when the weather station was moved to it's current [location](https://www.cl.cam.ac.uk/research/dtg/weather/map.html).
-
-Unrealistically high wind speed (> 60), low humidity (< 10) and low temperature (< -20) values were removed.
-
-[Cook's distance](https://en.wikipedia.org/wiki/Cook%27s_distance) was used to remove the remaining influential observations.
-
-Some problems may remain in the data.  Such as long series of repeated values.
-
-The Digital Technology Group list [inaccuracies](https://www.cl.cam.ac.uk/research/dtg/weather/inaccuracies.html) in the
-weather data.
+The data included in the app start on 2008-08-01 when the weather station was moved to it's current 
+[location](https://www.cl.cam.ac.uk/research/dtg/weather/map.html).  Unrealistically high wind speed (> 60), 
+low humidity (< 10) and low temperature (< -20) values were removed.  [Cook's distance](https://en.wikipedia.org/wiki/Cook%27s_distance) 
+was used to remove the remaining influential observations but some problems may remain in the data.  Such as 
+long series of repeated values.  The Digital Technology Group list 
+[inaccuracies](https://www.cl.cam.ac.uk/research/dtg/weather/inaccuracies.html) in the weather data.
 
 I have no affiliation with Cambridge University, the Computer Laboratory or the Digital Technology Group.
 
