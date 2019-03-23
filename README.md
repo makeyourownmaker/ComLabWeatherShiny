@@ -51,8 +51,9 @@ I have no affiliation with Cambridge University, the Computer Laboratory or the 
 Usage is probably best done within [RStudio](https://www.rstudio.com/).
 
 ```
-# Install shiny if necessary
+# Install required libraries
 install.packages("shiny")
+install.packages("data.table")
 
 library(shiny)
 
