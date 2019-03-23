@@ -3,7 +3,7 @@
 ![Lifecycle
 ](https://img.shields.io/badge/lifecycle-experimental-orange.svg?style=flat)
 ![R
-%>%= 3.0.2](https://img.shields.io/badge/R->%3D3.1.0-blue.svg?style=flat)
+%>%= 3.0.2](https://img.shields.io/badge/R->%3D3.0.2-blue.svg?style=flat)
 
 Interactive exploration of the Cambridge University
 Computer Laboratory [weather station](https://www.cl.cam.ac.uk/research/dtg/weather/) measurements.
