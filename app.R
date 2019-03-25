@@ -1,9 +1,12 @@
 
 library(shiny)
+library(ggplot2)
 library(markdown)
 library(data.table)
 
-cammet <- readRDS("data/CamMetCleanishData.RData")
+source("linked_scatter.R")
+
+cammet <- readRDS("data/CamMetCleanish.RData")
 
 
 ui <- shinyUI(fluidPage(
@@ -12,75 +15,59 @@ ui <- shinyUI(fluidPage(
     tabPanel("Plot",
       sidebarLayout(
         sidebarPanel(
-          helpText("Explore ", tags$a(href="https://www.cl.cam.ac.uk/research/dtg/weather/", "ComLab"),  "weather measurements:"),
+          helpText("Explore ", tags$a(href = "https://www.cl.cam.ac.uk/research/dtg/weather/", 
+                                      "ComLab"),
+                   "weather measurements:"),
           selectInput("year", 
-                      strong("Choose year"), 
-                      choices = c("2019" = 2019,
-                                  "2018" = 2018,
-                                  "2017" = 2017,
-                                  "2016" = 2016,
-                                  "2015" = 2015,
-                                  "2014" = 2014,
-                                  "2013" = 2013,
-                                  "2012" = 2012,
-                                  "2011" = 2011,
-                                  "2010" = 2010,
-                                  "2009" = 2009,
-                                  "2008" = 2008),
-                      selected = "2019"),
+             strong("Choose year"), 
+             choices  = yearChoices,
+             selected = "2019"),
           selectInput("selectX", 
-                      strong("Choose x variable"), 
-                      choices = c("Temperature" = "temperature", 
-                                  "Dew Point"   = "dew.point", 
-                                  "Humidity"    = "humidity", 
-                                  "Pressure"    = "pressure",
-                                  "Wind Speed Mean"    = "wind.speed.mean",
-                                  "Wind Bearing Mean" = "wind.bearing.mean",
-                                  "Time" = "ds"),
-                      selected = "temperature"),
+             strong("Choose x variable"), 
+             choices  = plotChoices,
+             selected = "temperature"),
           selectInput("selectY", 
-                      strong("Choose y variable"), 
-                      choices = c("Temperature" = "temperature", 
-                                  "Dew Point"   = "dew.point", 
-                                  "Humidity"    = "humidity", 
-                                  "Pressure"    = "pressure",
-                                  "Wind Speed Mean"   = "wind.speed.mean",
-                                  "Wind Bearing Mean" = "wind.bearing.mean"),
-                      selected = "dew.point")
+             strong("Choose y variable"), 
+             choices  = plotChoices,
+             selected = "dew.point")
         ),
     
         mainPanel(
-          plotOutput("plot"),
-          textOutput("selected_x")
+          plotOutput("plot")
         )
       )
     ),
+    
+    tabPanel("Advanced",
+      textOutput("summary"),
+      linkedScatterUI("scatters")
+    ),
+    
     tabPanel("About",
-             includeMarkdown("README.md")
+      includeMarkdown("README.md")
     )
 
 )))
 
 
-server <- shinyServer(function(input, output) {
-
-  # debuging
-  output$selected_x <- renderText({ 
-    paste("You have selected", input$selectX)
+server <- shinyServer(function(input, output, session) {
+  df <- callModule(linkedScatter, "scatters", reactive(cammet[year==input$advYear,]),
+    left  = reactive(c(input$selectLeftX,  input$selectLeftY)),
+    right = reactive(c(input$selectRightX, input$selectRightY))
+  )
+  
+  output$summary <- renderText({
+    sprintf("%d observation(s) selected", sum(df()$selected_))
   })
 
   data <- reactive({
-      cammet[year==input$year, .(get(input$selectX), get(input$selectY))]
+    cammet[year == input$year,]
   })
   
   output$plot <- renderPlot({
-    if ( input$selectX == "ds" ) { 
-      labelX <- "timestamp"
-    } else {
-      labelX <- input$selectX
-    }
-    
-    plot(data(), xlab=labelX, ylab=input$selectY, pch=20)
+    ggplot(data(), aes_string(x = input$selectX, y = input$selectY)) +
+      geom_point() +
+      scale_color_manual(guide = FALSE)
   })
   
 })
