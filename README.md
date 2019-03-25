@@ -40,9 +40,10 @@ There are known issues with the sunlight and rain sensors.  These measurements a
 The data included in the app start on 2008-08-01 when the weather station was moved to it's current 
 [location](https://www.cl.cam.ac.uk/research/dtg/weather/map.html).  Unrealistically high wind speed (> 60), 
 low humidity (< 10) and low temperature (< -20) values were removed.  [Cook's distance](https://en.wikipedia.org/wiki/Cook%27s_distance) 
-was used to remove the remaining influential observations but some problems may remain in the data.  Such as 
-long series of repeated values.  The Digital Technology Group list 
-[inaccuracies](https://www.cl.cam.ac.uk/research/dtg/weather/inaccuracies.html) in the weather data.
+was used to remove the remaining influential observations but some problems may remain in the data, such as 
+long series of repeated values.  The remaining measurements have no missing values.  The Digital Technology 
+Group list [inaccuracies](https://www.cl.cam.ac.uk/research/dtg/weather/inaccuracies.html) in the weather 
+data.
 
 I have no affiliation with Cambridge University, the Computer Laboratory or the Digital Technology Group.
 
