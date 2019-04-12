@@ -47,8 +47,8 @@ was used to remove the remaining influential observations but some problems may 
 long series of repeated values.  The remaining measurements have no missing values.  
 
 There are two cleaning scripts included in the scripts directory: 
-  1. [1-load.R](scripts/1-load.R) which loads the data and adds some date and time related fields.
-  2. [2-clean.R](scripts/2-clean.R) which removes unrealistic and inaccurate measurements.
+  * [1-load.R](scripts/1-load.R) which loads the data and adds some date and time related fields.
+  * [2-clean.R](scripts/2-clean.R) which removes unrealistic and inaccurate measurements.
 
 I have no affiliation with Cambridge University, the Computer Laboratory or the Digital Technology Group.
 
@@ -75,6 +75,7 @@ if (interactive()) {
 * Improve documentation
   * Add screenshots to README
 * Add tests
+  * Using [shinytest](https://rstudio.github.io/shinytest/)
 * Make app available on [shinyapps.io](https://shinyapps.io/)
 
 
