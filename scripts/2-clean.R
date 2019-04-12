@@ -154,6 +154,6 @@ weather.08.08.01.cc <-  weather.08.08.01.cc[complete.cases(weather.08.08.01.cc)]
 
 # The remaining data should contain no missing values but other issues may remain 
 # such as long series of repeated values.
-saveRDS(weather.08.08.01.cc[, .(temperature, dew.point, humidity, pressure, wind.speed.mean, wind.bearing.mean, ds)], "CamMetCleanish.RData")
+saveRDS(weather.08.08.01.cc[, .(temperature, dew.point, humidity, pressure, wind.speed.mean, wind.bearing.mean, ds, year)], "CamMetCleanish.RData")
 
 
