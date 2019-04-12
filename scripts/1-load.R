@@ -5,7 +5,9 @@ library(data.table)
 
 weather.raw <- read.csv("https://www.cl.cam.ac.uk/research/dtg/weather/weather-raw.csv")
 weather.raw.orig <- weather.raw
-colnames(weather.raw) <- c("timestamp", "temperature", "humidity", "dew.point", "pressure", "wind.speed.mean", "wind.bearing.mean", "sunshine", "rainfall", "wind.speed.max")
+colnames(weather.raw) <- c("timestamp", "temperature", "humidity", "dew.point", 
+                           "pressure", "wind.speed.mean", "wind.bearing.mean", 
+                           "sunshine", "rainfall", "wind.speed.max")
 str(weather.raw)
 
 weather.raw <- data.table(weather.raw)
@@ -42,8 +44,16 @@ weather.rise.set <- as.data.table(unique(weather.raw$date))
 colnames(weather.rise.set) <- "date"
 
 # Approx. 15 secs each for next two commands
-weather.rise.set[, sunrise:=round_date(getSunlightTimes(date=date, lat=52.210922, lon=0.091964, keep=c("sunrise", "sunset"))$sunrise, unit="1 minute")]
-weather.rise.set[, sunset:=round_date(getSunlightTimes(date=date, lat=52.210922, lon=0.091964, keep=c("sunrise", "sunset"))$sunset, unit="1 minute")]
+weather.rise.set[, sunrise:=round_date(getSunlightTimes(date=date, 
+                                                        lat=52.210922, 
+                                                        lon=0.091964, 
+                                                        keep=c("sunrise", "sunset"))$sunrise, 
+                                       unit="1 minute")]
+weather.rise.set[, sunset:=round_date(getSunlightTimes(date=date, 
+                                                       lat=52.210922, 
+                                                       lon=0.091964, 
+                                                       keep=c("sunrise", "sunset"))$sunset, 
+                                      unit="1 minute")]
 
 setkey(weather.raw, "date")
 setkey(weather.rise.set, "date")
