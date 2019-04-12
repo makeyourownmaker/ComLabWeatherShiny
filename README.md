@@ -20,11 +20,11 @@ The weather measurements include the following variables.
   
 | Variables         | Units                      |
 |-------------------|----------------------------|
-| Temperature       | Celsius (°C)               |
-| Dew Point         | Celsius (°C)               |
+| Temperature       | Celsius (°C) * 10          |
+| Dew Point         | Celsius (°C) * 10          |
 | Humidity          | Percent                    |
 | Pressure          | mBar                       |
-| Wind Speed Mean   | Knots                      |
+| Wind Speed Mean   | Knots * 10                 |
 | Wind Bearing Mean | Degrees                    |
 | Timestamp         | Data Hours:Minutes:Seconds |
 
