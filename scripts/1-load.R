@@ -19,8 +19,10 @@ weather.raw[, time:=strftime(ds, format = "%H:%M:%S")]
 weather.raw[, secs:=as.numeric(as.difftime(time))]
 
 # From: https://www.cl.cam.ac.uk/research/dtg/weather/
-#   "There is a known issue with the sunlight and rain sensors sometimes over-reporting readings. 
-#    We are investigating how best to fix this and we should be able to correct archived records once the problem is resolved."
+#   "There is a known issue with the sunlight and rain sensors sometimes 
+#    over-reporting readings.  We are investigating how best to fix this 
+#    and we should be able to correct archived records once the problem 
+#    is resolved."
 # Replace rainfall and sunshine with binary fields - 0 if 0, 1 if > 0
 # Leaving these fields unused for now
 weather.raw[, rainy:=ifelse(rainfall > 0, 1, 0)]
