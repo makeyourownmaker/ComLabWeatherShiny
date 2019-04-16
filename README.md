@@ -14,6 +14,8 @@ The [Digital Technology Group](https://www.cl.cam.ac.uk/research/dtg/) in the Ca
 [Computer Laboratory](https://www.cl.cam.ac.uk/) maintain a [weather station](https://www.cl.cam.ac.uk/research/dtg/weather/).
 
 This R [shiny](https://shiny.rstudio.com/) app provides an interactive exploration of some of this data.
+It includes basic scatter plots, interactive plots (linked plots with data brushing) and also radial plots 
+showing annual changes.
 
 ### Variables
 The weather measurements include the following variables.
