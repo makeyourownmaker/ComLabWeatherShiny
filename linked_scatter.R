@@ -50,6 +50,7 @@ linkedScatterUI <- function(id) {
   )
 }
 
+
 linkedScatter <- function(input, output, session, data, left, right) {
   # Yields the data frame with an additional column "selected_"
   # that indicates whether that observation is brushed
@@ -67,6 +68,7 @@ linkedScatter <- function(input, output, session, data, left, right) {
 
   return(dataWithSelection)
 }
+
 
 scatterPlot <- function(data, cols) {
   ggplot(data, aes_string(x = cols[1], y = cols[2])) +
