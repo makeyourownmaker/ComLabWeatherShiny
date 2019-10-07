@@ -1,7 +1,7 @@
 # ComLabWeatherShiny
 
 ![Lifecycle
-](https://img.shields.io/badge/lifecycle-experimental-orange.svg?style=flat)
+](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=flat)
 ![R
 %>%= 3.0.2](https://img.shields.io/badge/R->%3D3.0.2-blue.svg?style=flat)
 
