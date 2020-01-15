@@ -78,7 +78,7 @@ if (interactive()) {
 ## Roadmap
 
 * Improve documentation
-  * Add screenshots to README
+  * Describe each of the interactive plots in more detail
 * Add tests
   * Using [shinytest](https://rstudio.github.io/shinytest/)
 * Make app available on [shinyapps.io](https://shinyapps.io/)
