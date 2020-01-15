@@ -9,7 +9,7 @@ Interactive exploration of the Cambridge University
 Computer Laboratory [weather station](https://www.cl.cam.ac.uk/research/dtg/weather/) measurements.
 
 
-<img src="figures/tabs.gif" width="75%" height="75%">
+<img src="figures/tabs.gif" width="85%" height="85%">
 
 
 ## Details
