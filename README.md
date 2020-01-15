@@ -9,6 +9,9 @@ Interactive exploration of the Cambridge University
 Computer Laboratory [weather station](https://www.cl.cam.ac.uk/research/dtg/weather/) measurements.
 
 
+<img src="figures/tabs.gif" width="50%" height="50%">
+
+
 ## Details
 The [Digital Technology Group](https://www.cl.cam.ac.uk/research/dtg/) in the Cambridge University 
 [Computer Laboratory](https://www.cl.cam.ac.uk/) maintain a [weather station](https://www.cl.cam.ac.uk/research/dtg/weather/).
