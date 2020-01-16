@@ -84,6 +84,13 @@ if (interactive()) {
 * Make app available on [shinyapps.io](https://shinyapps.io/)
 
 
+## See Also
+
+* My related weather repositories:
+  * [Cambridge Temperature Forecasts](https://github.com/makeyourownmaker/CambridgeTemperatureModel)
+  * [Forecasting surface temperature based on latitude, longitude, day of year and hour of day](https://github.com/makeyourownmaker/ParametricWeatherModel)
+
+
 ## Contributing
 Pull requests are welcome.  For major changes, please open an issue first to discuss what you would like to change.
 
