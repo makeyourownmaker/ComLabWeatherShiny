@@ -16,6 +16,8 @@ Computer Laboratory [weather station](https://www.cl.cam.ac.uk/research/dtg/weat
 The [Digital Technology Group](https://www.cl.cam.ac.uk/research/dtg/) in the Cambridge University 
 [Computer Laboratory](https://www.cl.cam.ac.uk/) maintain a [weather station](https://www.cl.cam.ac.uk/research/dtg/weather/).
 
+I live close to this weather station.  Hence my interest.
+
 This R [shiny](https://shiny.rstudio.com/) app provides an interactive exploration of some of this data.
 It includes basic scatter plots, interactive plots (linked plots with data brushing) and also radial plots 
 showing annual changes.
