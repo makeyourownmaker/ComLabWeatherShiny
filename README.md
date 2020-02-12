@@ -8,6 +8,8 @@
 Interactive exploration of the Cambridge University
 Computer Laboratory [weather station](https://www.cl.cam.ac.uk/research/dtg/weather/) measurements.
 
+If you like ComLabWeatherShiny, give it a star, or fork it and contribute!
+
 
 <img src="figures/tabs.gif" width="85%" height="85%">
 
