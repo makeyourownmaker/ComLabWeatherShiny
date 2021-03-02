@@ -91,8 +91,9 @@ if (interactive()) {
 ## See Also
 
 * My related weather repositories:
-  * [Cambridge Temperature Forecasts](https://github.com/makeyourownmaker/CambridgeTemperatureModel)
+  * [Cambridge Temperature Forecasts in R](https://github.com/makeyourownmaker/CambridgeTemperatureModel)
   * [Forecasting surface temperature based on latitude, longitude, day of year and hour of day](https://github.com/makeyourownmaker/ParametricWeatherModel)
+  * [Time series and other models for Cambridge UK temperature forecasts in python](https://github.com/makeyourownmaker/CambridgeTemperatureNotebooks)
 
 
 ## Contributing
