@@ -81,6 +81,7 @@ if (interactive()) {
 
 ## Roadmap
 
+* Update data to include 2020
 * Improve documentation
   * Describe each of the interactive plots in more detail
 * Add tests
